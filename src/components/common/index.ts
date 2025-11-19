@@ -7,3 +7,4 @@ export { Badge } from "./Badge";
 export { LoadingBar } from "./LoadingBar";
 export { Section } from "./Section";
 export { CustomCursor } from "./CustomCursor";
+export { LoadingScreen } from "./LoadingScreen";

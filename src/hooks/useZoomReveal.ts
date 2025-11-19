@@ -4,6 +4,7 @@
  */
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { useLoading } from "../context/useLoadingContext";
 
 interface ZoomRevealConfig {
   duration?: number;
@@ -20,10 +21,11 @@ export const useZoomReveal = (config: ZoomRevealConfig = {}) => {
     scale = 1.1,
   } = config;
 
+  const { isLoading } = useLoading();
   const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!elementRef.current) return;
+    if (!elementRef.current || isLoading) return;
 
     gsap.fromTo(
       elementRef.current,
@@ -39,7 +41,7 @@ export const useZoomReveal = (config: ZoomRevealConfig = {}) => {
         ease: "power2.inOut",
       }
     );
-  }, [duration, delay, blur, scale]);
+  }, [duration, delay, blur, scale, isLoading]);
 
   return elementRef;
 };
