@@ -1,0 +1,57 @@
+name: "❓ Pregunta"
+description: "Haz una pregunta sobre el uso, el código o la arquitectura de la landing."
+title: "[❓] Pregunta: <título breve>"
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por tu pregunta 🙌
+        Describe tu duda de forma clara para que podamos responder rápido.
+
+  - type: input
+    id: topic
+    attributes:
+      label: "🧩 Tema principal"
+      description: "Resume tu pregunta en una frase."
+      placeholder: "Ej: ¿Cómo cambiar el texto del hero?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: "📝 Pregunta"
+      description: "Explica tu duda con detalle: qué esperas, qué ocurre y pasos para reproducir si aplica."
+      placeholder: "Detalla qué parte del código o página no entiendes."
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "📌 Contexto (opcional)"
+      description: "Archivos, rutas, capturas o snippets que ayuden a entender el problema."
+      placeholder: "Ej: Archivo src/components/HeroSection/HeroTagline.tsx, captura adjunta"
+      render: markdown
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: "⏱️ Urgencia"
+      options:
+        - Baja — cuando haya tiempo
+        - Media — necesito continuar mi trabajo
+        - Alta — bloquea al equipo
+      default: 0
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "✔️ Confirmaciones"
+      options:
+        - label: "He buscado en la documentación antes de preguntar."
+          required: true
+        - label: "He revisado issues abiertos por si ya existe esta pregunta."
+          required: true

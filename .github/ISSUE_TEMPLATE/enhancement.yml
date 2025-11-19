@@ -1,0 +1,48 @@
+name: "🚀 Propuesta de feature"
+description: "Sugerir una nueva característica o mejora para la landing page."
+title: "[🚀] Propuesta: <título breve>"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por proponer una mejora 🙌
+        Describe la idea brevemente y por qué sería útil para la landing.
+
+  - type: textarea
+    id: feature
+    attributes:
+      label: "📌 Descripción"
+      description: "Descripción clara y concisa de la mejora propuesta."
+      placeholder: "Quisiera añadir soporte para..."
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: "🤔 Motivación / Beneficio"
+      description: "Qué problema resuelve o qué valor aporta."
+      placeholder: "Esto permitiría..."
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: "🛠 Ideas de implementación (opcional)"
+      description: "Si tienes sugerencias técnicas o pasos, añádelos aquí."
+      placeholder: "Podría implementarse creando un módulo..."
+      render: markdown
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "✔ Checklist"
+      options:
+        - label: "He verificado que no existe ya esta propuesta en los issues."
+          required: true
+        - label: "La propuesta encaja con el objetivo de la landing."
+          required: true

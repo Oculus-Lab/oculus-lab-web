@@ -1,0 +1,100 @@
+name: "✨ Propuesta de feature"
+description: "Proponer la adición de una nueva sección, componente o bloque para la landing page."
+title: "[✨] Feature: <título breve>"
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por proponer una mejora ✨
+        Usa esta plantilla para describir una nueva sección, componente o bloque visual para la landing.
+
+  - type: input
+    id: short_title
+    attributes:
+      label: "� Título breve"
+      description: "Resumen de la propuesta en una línea."
+      placeholder: "Ej: Sección de 'Testimonios' con carrusel de logos"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature_type
+    attributes:
+      label: "📦 Tipo"
+      options:
+        - Sección
+        - Componente
+        - Estilo / CSS
+        - Contenido
+        - Otro
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: "📍 Ubicación / Ruta"
+      description: "Dónde debería añadirse (p.ej. src/sections/HeroSection o /about)."
+      placeholder: "Ej: src/sections/Testimonials/"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📝 Descripción detallada"
+      description: "Describe qué debe hacer, cómo se verá y cualquier comportamiento esperado."
+      placeholder: |
+        - Comportamiento: carrusel automático con pausa al hover
+        - Contenido: nombres, cargos y foto circular
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: "🎯 Motivación / Beneficio"
+      description: "Por qué es útil para la landing y qué objetivo cumple."
+      placeholder: "Ej: Mejorar la confianza mostrando clientes y testimonios."
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: "� Mockups / Enlaces / Adjuntos (opcional)"
+      description: "URLs, imágenes o Figma links que ilustren la propuesta."
+      placeholder: "Enlace a Figma, imagen o sketch..."
+      render: markdown
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: "� Impacto / Complejidad"
+      options:
+        - Bajo — pequeño ajuste o componente simple
+        - Medio — componente con estado o integración
+        - Alto — nueva sección compleja o integración con backend
+    validations:
+      required: true
+
+  - type: input
+    id: estimate_hours
+    attributes:
+      label: "⏱ Estimación (horas, opcional)"
+      placeholder: "Ej: 4-8"
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "✔ Checklist"
+      options:
+        - label: "He buscado si ya existe una propuesta similar."
+          required: true
+        - label: "Incluí (si aplica) mockups o ejemplos visuales."
+          required: false
+        - label: "La propuesta encaja con la estructura actual de la landing."
+          required: true
+

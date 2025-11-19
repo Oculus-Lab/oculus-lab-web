@@ -1,0 +1,58 @@
+name: "🐛 Reportar bug"
+description: "Reporta un problema o comportamiento inesperado (landing page)."
+title: "[🐛] Bug: <resumen corto>"
+labels: ["bug"]
+assignees: []
+
+body:
+  - type: markdown
+    id: intro
+    attributes:
+      value: |
+        Gracias por informar un bug. Para arreglarlo rápido necesitamos poder reproducirlo — por favor completa los campos mínimos.
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Pasos para reproducir"
+      description: "Pasos claros y concisos para reproducir el problema."
+      placeholder: |
+        1. Ir a '...'
+        2. Hacer click en '...'
+        3. Observar error
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Comportamiento esperado"
+      placeholder: "Lo que debería ocurrir..."
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: "Comportamiento actual"
+      placeholder: "Lo que ocurre (adjunta capturas si es posible)"
+      render: markdown
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: "Navegador / SO / Versión"
+      placeholder: "p.ej.: Chrome 120 — macOS 14"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "Información adicional (opcional)"
+      placeholder: "Logs, enlaces, capturas..."
+      render: markdown

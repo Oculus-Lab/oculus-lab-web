@@ -1,0 +1,99 @@
+name: "📝 Crear tarea"
+description: "Crea una tarea relacionada con la landing (componente, sección, contenido o estilo)."
+title: "[📝] Tarea: <título breve>"
+labels: ["enhancement"]
+assignees: []
+
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: "📝 Resumen"
+      description: "Breve descripción de la tarea."
+      placeholder: "Ej: Implementar sección de 'Testimonios' con carrusel"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: "� Área"
+      description: "Selecciona el área afectada por la tarea."
+      options:
+        - Frontend
+        - Diseño
+        - Contenido
+        - QA
+        - Otro
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: "� Ubicación / Ruta (opcional)"
+      description: "Ruta sugerida para añadir archivos (p.ej. src/sections/Testimonials)."
+      placeholder: "Ej: src/sections/Testimonials/"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📚 Descripción detallada"
+      description: "Qué debe implementarse y por qué."
+      placeholder: |
+        - ¿Qué debe hacer exactamente?
+        - ¿Qué problema resuelve?
+        - Dependencias o integraciones necesarias
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "🔧 Pasos sugeridos (opcional)"
+      description: "Guía rápida para empezar: archivos a crear, pruebas, etc."
+      placeholder: |
+        1. Crear carpeta src/sections/Testimonials
+        2. Implementar componente y estilos
+        3. Añadir pruebas y actualizar documentación
+      render: markdown
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: "✅ Criterios de aceptación"
+      description: "Cómo sabremos que la tarea está completa."
+      placeholder: |
+        - El componente renderiza correctamente en la página
+        - Pasan las pruebas unitarias relacionadas
+        - Documentación y ejemplos añadidos
+      render: markdown
+    validations:
+      required: true
+
+  - type: input
+    id: estimate_hours
+    attributes:
+      label: "⏱ Estimación (horas, opcional)"
+      placeholder: "Ej: 3-5"
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "⚑ Prioridad"
+      options:
+        - Baja
+        - Media
+        - Alta
+      default: 1
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: "✔ Confirmaciones"
+      options:
+        - label: "He buscado si existe un issue similar."
+          required: true
+        - label: "He incluido criterios claros de aceptación."
+          required: true

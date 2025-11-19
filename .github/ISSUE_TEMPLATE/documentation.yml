@@ -1,0 +1,66 @@
+name: "📚 Documentación"
+description: "Reporta errores o mejoras en la documentación de la landing page."
+labels: ["documentation"]
+title: "[📚] Documentación: <título descriptivo>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por ayudar a mejorar la documentación 🙌
+        Por favor deja información clara y breve para que podamos arreglarlo rápido.
+
+  - type: input
+    id: doc_section
+    attributes:
+      label: "📄 Sección / Archivo"
+      description: "Archivo o lugar donde ocurre el problema (ej: README.md, /docs/uso.md, src/pages/about.md)."
+      placeholder: "Ej: README.md"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue_description
+    attributes:
+      label: "📝 Descripción"
+      description: "Qué está mal o qué falta (sé concreto)."
+      placeholder: "Ej: El ejemplo de instalación está desactualizado y falla con npm@9."
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "💡 Propuesta de mejora (opcional)"
+      description: "Si tienes una sugerencia concreta, p.ej. fragmento de texto o corrección, pégala aquí."
+      placeholder: "Ej: Reemplazar el paso 'npm install' por 'pnpm install' y añadir nota sobre Node 18+."
+      render: markdown
+
+  - type: dropdown
+    id: type_of_doc_issue
+    attributes:
+      label: "📌 Tipo"
+      options:
+        - Error factual
+        - Falta de ejemplo
+        - Texto confuso
+        - Actualización requerida
+        - Otro
+    validations:
+      required: true
+
+  - type: textarea
+    id: proof
+    attributes:
+      label: "🔍 Evidencia (opcional)"
+      description: "Capturas, enlaces o snippets que ayuden a reproducir o ilustrar el problema."
+      placeholder: "Capturas o enlaces..."
+      render: markdown
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "✔️ Confirmación"
+      options:
+        - label: "He buscado si ya existe este issue."
+          required: true
