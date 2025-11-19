@@ -1,6 +1,25 @@
 ---
+import { Box } from "@lucide/astro"
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
+    <main class="min-w-screen min-h-screen relative flex flex-col justify-between">
+        <div class="absolute inset-0 w-full h-full -z-20">
+            <video autoplay muted playsinline loop class="w-full h-full object-cover" src="https://videos.pexels.com/video-files/3163534/3163534-uhd_2560_1440_30fps.mp4"></video>
+        </div>
+        <div class="absolute inset-0 w-full h-full -z-10 bg-linear-to-tl from-black to-transparent"></div>
+        <nav class=" flex flex-row justify-between px-20 py-20">
+            <h1 class="text-4xl text-white font-medium flex flex-row items-center gap-4">
+                <Box class="w-10 h-10" />
+                OculusLab</h1>
+            <div class="flex flex-col items-end justify-center gap-2">
+                <div class="w-16 h-1 rounded-2xl bg-white"></div>
+                <div class="w-12 h-1 rounded-2xl bg-white"></div>
+            </div>
+        </nav>
+        <section class="px-20 pb-20">
+            <p class="text-4xl text-white w-2/3">Mentes que innovan proyectos: transformamos ideas en diseño, ciencia y futuro global.</p>
+        </section>
+    </main>
 </Layout>
