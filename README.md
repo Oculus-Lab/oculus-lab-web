@@ -1,69 +1,73 @@
-# OculusLab Web
+# React + TypeScript + Vite
 
-![OculusLab Banner](./image.png)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🔬 Sobre OculusLab
+Currently, two official plugins are available:
 
-**OculusLab** es un equipo de investigación de vanguardia dedicado a la exploración, análisis y desarrollo de soluciones tecnológicas innovadoras. Este repositorio aloja el código fuente de nuestra plataforma web oficial, diseñada para servir como punto de encuentro para nuestros hallazgos, publicaciones científicas y proyectos en desarrollo.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🚀 Visión General del Proyecto
+## React Compiler
 
-Esta plataforma web ha sido construida con un enfoque en el **rendimiento**, la **accesibilidad** y la **experiencia de usuario**. Utilizamos una arquitectura moderna que garantiza tiempos de carga rápidos y una navegación fluida, reflejando la excelencia técnica que caracteriza a nuestro equipo de investigación.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-### 🛠️ Stack Tecnológico
+## Expanding the ESLint configuration
 
-El proyecto aprovecha las últimas herramientas del ecosistema web para ofrecer una experiencia de desarrollo y usuario superior:
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-- **[Astro 5](https://astro.build/):** El núcleo de nuestra arquitectura. Un framework web diseñado para la velocidad, que nos permite entregar menos JavaScript al cliente y renderizar contenido estático de manera eficiente.
-- **[Tailwind CSS 4](https://tailwindcss.com/):** Utilizado para el diseño de la interfaz. Nos permite construir componentes visuales modernos y totalmente responsivos directamente en el marcado, con un sistema de diseño coherente.
-- **[Lucide Astro](https://lucide.dev/):** Implementación de iconos vectoriales SVG limpios y ligeros para mejorar la interfaz de usuario.
-- **[Vite](https://vitejs.dev/):** El motor que impulsa nuestro entorno de desarrollo y proceso de construcción, garantizando recargas instantáneas y builds optimizados.
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-### 🏗️ Arquitectura del Proyecto
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-La estructura del código sigue una organización modular y escalable, típica de los proyectos Astro:
-
-```text
-/
-├── public/          # Archivos estáticos públicos (imágenes, fuentes, etc.)
-├── src/
-│   ├── assets/      # Activos procesados por Vite (imágenes optimizadas)
-│   ├── components/  # Componentes de UI reutilizables y modulares
-│   ├── layouts/     # Plantillas maestras que definen la estructura común de las páginas
-│   ├── pages/       # Rutas de la aplicación (File-based routing)
-│   └── styles/      # Estilos globales y configuraciones de CSS
-├── astro.config.mjs # Configuración del framework Astro
-└── package.json     # Definición de dependencias y scripts
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-## 💻 Guía de Inicio
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-Sigue estos pasos para configurar el entorno de desarrollo localmente:
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-1. **Clonar el repositorio**
-   ```bash
-   git clone https://github.com/Oculus-Lab/oculus-lab-web.git
-   cd oculus-lab-web
-   ```
-
-2. **Instalar dependencias**
-   ```bash
-   npm install
-   ```
-
-3. **Ejecutar en modo desarrollo**
-   ```bash
-   npm run dev
-   ```
-   La aplicación estará disponible en `http://localhost:4321`.
-
-4. **Construir para producción**
-   ```bash
-   npm run build
-   ```
-
----
-
-<p align="center">
-  © 2025 <strong>OculusLab</strong>. Todos los derechos reservados.
-</p>
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
