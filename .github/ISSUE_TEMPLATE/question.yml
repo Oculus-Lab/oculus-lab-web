@@ -1,0 +1,58 @@
+name: "❓ Pregunta"
+description: "Haz una pregunta relacionada con el proyecto, la arquitectura, el código o el uso del repositorio."
+title: "[❓] Pregunta: <título breve de la pregunta>"
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por tu pregunta. Completa esta información para que podamos ayudarte de forma precisa.
+
+  - type: input
+    id: title
+    attributes:
+      label: "🧩 Tema principal"
+      description: "Resume tu pregunta en una frase."
+      placeholder: "Ej: ¿Cómo se normalizan las señales EEG en preproc?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: "📝 Pregunta"
+      description: "Explica tu duda con claridad."
+      placeholder: "Detalla qué parte del pipeline, código o documentación no entiendes."
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "📌 Contexto adicional (opcional)"
+      description: "Incluye fragmentos de código, capturas, links o la ruta del archivo relacionado."
+      placeholder: |
+        Ej:
+        - Estoy trabajando en preproc/lab_03/notebook.ipynb
+        - El script preprocess_signals.py usa una función que no entiendo
+        - Captura de error adjunta
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: "⏱️ Nivel de urgencia"
+      options:
+        - Baja — cuando haya tiempo
+        - Media — la necesito para continuar mi parte
+        - Alta — estoy bloqueando al equipo
+      default: 0
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "✔️ Confirmaciones"
+      options:
+        - label: "He revisado la documentación antes de abrir esta pregunta."
+          required: true
+        - label: "Revisé issues existentes por si alguien ya preguntó lo mismo."
+          required: true

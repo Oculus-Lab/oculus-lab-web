@@ -1,0 +1,71 @@
+name: "💡 Propuesta de interfaz gráfica"
+description: "Proponer una tarea de diseño gráfico para explorar nuevas ideas, técnicas o enfoques relevantes para el proyecto."
+title: "[💡] Propuesta: <título descriptivo>"
+labels:
+  - question
+  - help wanted
+  - enhancement
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: 🧠 Contexto del Problema
+      description: Explica qué área se quiere crear y por qué es relevante para el proyecto.
+      placeholder: >
+        Ejemplo:
+        - Crear una nueva sección en la landing page que hable sobre nuestros papers científicos
+        - Diseñar un dashboard para visualizar datos
+    validations:
+      required: true
+
+  - type: textarea
+    id: research_goal
+    attributes:
+      label: 🎯 Objetivo de la Investigación
+      description: ¿Qué se quiere lograr exactamente? Define un resultado esperado concreto.
+      placeholder: >
+        Ejemplo:
+        - Crear un prototipo de interfaz para la nueva sección de papers científicos.
+        - Diseñar un dashboard interactivo para visualizar datos clave.
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: 📝 Tareas a Realizar
+      description: Lista las acciones conceptuales necesarias para completar esta investigación.
+      placeholder: |
+        - Leer y resumir papers relacionados
+        - Revisar benchmarks existentes
+        - Crear cuadro comparativo
+        - Proponer experimento
+
+
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: 📦 Entregables Esperados
+      description: ¿Qué se espera obtener al finalizar la investigación? (Conceptualmente)
+      placeholder: |
+        - Resumen en markdown en /docs/research/<topic>.md
+        - Recomendación final con análisis crítico
+        - Comparativa técnica
+
+  - type: textarea
+    id: discussion
+    attributes:
+      label: 💬 Notas Adicionales o Puntos a Discusión
+      description: Cualquier detalle extra que deba discutirse o revisarse.
+      placeholder: "Notas o inquietudes..."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✔ Checklist
+      description: Marca antes de crear la issue.
+      options:
+        - label: He verificado que no existe una issue duplicada
+          required: true
+        - label: He leído las guías de contribución
+          required: false
