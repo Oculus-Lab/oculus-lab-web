@@ -1,7 +1,7 @@
 /**
  * Index file for HeroSection components
  */
-export { HeroTitle } from "./HeroTitle";
-export { HeroSubtitle } from "./HeroSubtitle";
-export { HeroCTA } from "./HeroCTA";
+export { HeroBackground } from "./HeroBackground";
+export { HeroNav } from "./HeroNav";
+export { HeroTagline } from "./HeroTagline";
 export { HeroSection } from "./HeroSection";

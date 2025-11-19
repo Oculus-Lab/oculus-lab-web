@@ -1,7 +1,13 @@
 /**
  * Custom React hooks
  */
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
+
+export { useLenis } from "./useLenis";
+export { useVideoLoader } from "./useVideoLoader";
+export { useZoomReveal } from "./useZoomReveal";
+export { useTypewriter } from "./useTypewriter";
+export { useScrollReveal } from "./useScrollReveal";
 
 export const useScrollTrigger = (callback: () => void, threshold: number = 0.5) => {
   useEffect(() => {
@@ -20,30 +26,32 @@ export const useScrollTrigger = (callback: () => void, threshold: number = 0.5) 
 };
 
 export const usePrevious = <T,>(value: T): T | undefined => {
-  const ref = useRef<T | undefined>(undefined);
+  const [previous, setPrevious] = useState<T | undefined>(undefined);
+
   useEffect(() => {
-    ref.current = value;
+    setPrevious(value);
   }, [value]);
-  return ref.current;
+
+  return previous;
 };
 
 export const useWindowSize = () => {
-  const size = useRef<{ width: number; height: number }>({
+  const [size, setSize] = useState<{ width: number; height: number }>({
     width: typeof window !== "undefined" ? window.innerWidth : 0,
     height: typeof window !== "undefined" ? window.innerHeight : 0,
   });
 
   useEffect(() => {
     const handleResize = () => {
-      size.current = {
+      setSize({
         width: window.innerWidth,
         height: window.innerHeight,
-      };
+      });
     };
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return size.current;
+  return size;
 };

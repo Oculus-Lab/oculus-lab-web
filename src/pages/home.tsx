@@ -1,9 +1,10 @@
-import { HeroSection } from "../components/sections/HeroSection";
+import { HeroSection, RevealSection } from "../components/sections";
 
 export default function Home() {
   return (
-    <main>
+    <main className="w-full overflow-x-hidden">
       <HeroSection />
+      <RevealSection />
     </main>
   );
 }
