@@ -19,7 +19,7 @@ export const HeroTagline: React.FC<HeroTaglineProps> = ({
   });
 
   return (
-    <section className="px-8 md:px-20 pb-8 md:pb-20">
+    <section className="px-8 md:px-20 pb-20">
       <p className="text-2xl md:text-4xl text-white w-full md:w-2/3 leading-tight font-light h-auto">
         {displayedText}
         {displayedText.length < text.length && (

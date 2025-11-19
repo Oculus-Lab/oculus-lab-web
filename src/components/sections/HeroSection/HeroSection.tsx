@@ -29,6 +29,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     <>
       <LoadingBar isLoading={!isVideoReady} progress={isVideoReady ? 100 : 60} />
       <main
+        id="hero"
         ref={mainRef}
         className="hero-section w-full h-screen overflow-hidden relative flex flex-col justify-end"
       >

@@ -6,3 +6,4 @@ export { Button } from "./Button";
 export { Badge } from "./Badge";
 export { LoadingBar } from "./LoadingBar";
 export { Section } from "./Section";
+export { CustomCursor } from "./CustomCursor";

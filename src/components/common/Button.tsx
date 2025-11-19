@@ -4,7 +4,7 @@
 import React from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline";
+  variant?: "primary" | "secondary" | "outline" | "border-white";
   size?: "sm" | "md" | "lg";
   children: React.ReactNode;
 }
@@ -16,13 +16,14 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   ...props
 }) => {
-  const baseStyles = "font-semibold transition-all duration-300 rounded-lg";
+  const baseStyles = "font-semibold transition-colors duration-300";
 
+  const glassBase = "bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20";
   const variantStyles = {
-    primary:
-      "bg-blue-500 text-white hover:bg-blue-600 shadow-lg hover:shadow-xl",
-    secondary: "bg-slate-700 text-white hover:bg-slate-800",
-    outline: "border-2 border-blue-500 text-blue-500 hover:bg-blue-50",
+    primary: `${glassBase} shadow-lg`,
+    secondary: "bg-slate-700/60 backdrop-blur-md border border-slate-600 text-white hover:bg-slate-700/70 rounded-lg",
+    outline: "bg-transparent backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/10",
+    "border-white": "bg-transparent backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/10",
   };
 
   const sizeStyles = {

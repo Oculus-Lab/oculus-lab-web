@@ -6,8 +6,8 @@ interface RevealSectionProps {
 }
 
 export const RevealSection: React.FC<RevealSectionProps> = ({
-  message = "Si quieres las cosas bien hechas, hazlas tú mismo.",
-  id = "reveal-section",
+  message = "Aquel que tiene un porqué para vivir se puede enfrentar a todos los 'cómos'",
+  id = "reveal",
 }) => {
   const { containerRef, textRef } = useScrollReveal();
   const words = message.split(" ");
@@ -23,7 +23,7 @@ export const RevealSection: React.FC<RevealSectionProps> = ({
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-        <p ref={textRef} className="text-6xl text-white font-medium">
+        <p ref={textRef} className="text-4xl md:text-6xl text-white font-medium">
           {words.map((word, index) => (
             <span key={index} className="reveal-word">
               {word}{" "}

@@ -1,0 +1,1 @@
+export { WeWantSection } from "./WeWantSection";

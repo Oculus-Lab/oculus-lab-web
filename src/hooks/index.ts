@@ -8,6 +8,7 @@ export { useVideoLoader } from "./useVideoLoader";
 export { useZoomReveal } from "./useZoomReveal";
 export { useTypewriter } from "./useTypewriter";
 export { useScrollReveal } from "./useScrollReveal";
+export { useScrollDown } from "./useScrollDown";
 
 export const useScrollTrigger = (callback: () => void, threshold: number = 0.5) => {
   useEffect(() => {
