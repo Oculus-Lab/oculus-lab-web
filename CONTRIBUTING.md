@@ -364,7 +364,7 @@ useEffect(() => {
 ## 🆘 ¿Necesitas Ayuda?
 
 - 💬 Abre un [Discussion](https://github.com/Oculus-Lab/oculus-lab-web/discussions)
-- 📧 Escríbenos a contact@oculuslab.com
+- 📧 Escríbenos a contact@oculuslab.dev
 - 🐛 Revisa [Issues abiertos](https://github.com/Oculus-Lab/oculus-lab-web/issues)
 
 ## 🙏 Reconocimiento

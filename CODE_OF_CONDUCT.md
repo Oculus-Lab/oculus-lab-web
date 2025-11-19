@@ -35,7 +35,7 @@ Este Código de Conducta se aplica tanto en espacios del proyecto como en espaci
 
 ## Aplicación
 
-Los casos de comportamiento abusivo, acosador o de otro modo inaceptable pueden ser reportados contactando al equipo del proyecto en contact@oculuslab.com. Todas las quejas serán revisadas e investigadas y resultarán en una respuesta que se considere necesaria y apropiada a las circunstancias. El equipo del proyecto está obligado a mantener la confidencialidad con respecto al informante de un incidente.
+Los casos de comportamiento abusivo, acosador o de otro modo inaceptable pueden ser reportados contactando al equipo del proyecto en contact@oculuslab.dev. Todas las quejas serán revisadas e investigadas y resultarán en una respuesta que se considere necesaria y apropiada a las circunstancias. El equipo del proyecto está obligado a mantener la confidencialidad con respecto al informante de un incidente.
 
 ## Atribución
 
